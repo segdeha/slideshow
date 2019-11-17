@@ -1,0 +1,100 @@
+/* TRANSITIONS */
+/* put the classname for the transition style you want on the <body> tag */
+
+.fade section {
+    opacity: 1;
+    -webkit-transition: opacity 0.75s;
+}
+    .fade section.hidden {
+        opacity: 0;
+    }
+
+.rotate section {
+    opacity: 1;
+    -webkit-transform: rotate(0);
+    -webkit-transform-origin: left bottom;
+    -webkit-transition: all 0.75s;
+}
+    .rotate section.hidden {
+        opacity: 0;
+        -webkit-transform: rotate(-90deg);
+    }
+
+.scale section {
+    opacity 1;
+    -webkit-transform: scale(1);
+    -webkit-transition: all 0.75s;
+}
+    .scale section.hidden {
+        opacity: 0;
+        -webkit-transform: scale(2);
+    }
+
+.scale-in section {
+    opacity 1;
+    -webkit-transform: scale(1);
+    -webkit-transition: all 0.75s;
+}
+    .scale-in section.hidden {
+        opacity: 0;
+        -webkit-transform: scale(0);
+    }
+
+.slide-down section {
+    -webkit-transition: -webkit-transform 0.75s ease-in;
+}
+    .slide-down section.hidden {
+        -webkit-transform: translate3d(0, 110%, 0);
+    }
+
+.slide-left section {
+    -webkit-transition: -webkit-transform 0.75s;
+}
+    .slide-left section.hidden {
+        -webkit-transform: translate3d(-110%, 0, 0);
+    }
+
+/* transitions that override whatever is the base transition */
+/* TODO is this the best pattern for this or is there a more elegant way? */
+section.fade {
+    opacity: 1 !important;
+    -webkit-transition: opacity 0.75s !important;
+}
+    section.fade.hidden {
+        opacity: 0 !important;
+    }
+
+section.rotate {
+    opacity: 1 !important;
+    -webkit-transform: rotate(0) !important;
+    -webkit-transform-origin: left bottom !important;
+    -webkit-transition: all 0.75s !important;
+}
+    section.rotate.hidden {
+        opacity: 0 !important;
+        -webkit-transform: rotate(-90deg) !important;
+    }
+
+section.scale {
+    opacity 1 !important;
+    -webkit-transform: scale(1) !important;
+    -webkit-transition: all 0.75s !important;
+}
+    section.scale.hidden {
+        opacity: 0 !important;
+        -webkit-transform: scale(2) !important;
+    }
+
+section.slide-down {
+    -webkit-transition: -webkit-transform 0.75s ease-in !important;
+}
+    section.slide-down.hidden {
+        -webkit-transform: translate3d(0, 110%, 0) !important;
+    }
+
+section.slide-left {
+    -webkit-transition: -webkit-transform 0.75s !important;
+}
+    section.slide-left.hidden {
+        -webkit-transform: translate3d(-110%, 0, 0) !important;
+    }

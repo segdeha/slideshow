@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css?family=Rancho&display=swap');
+@import url('./transitions.css');
+
+/* basic reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: black;
+    bottom: 0;
+    color: white;
+    font: 48px/1.5 helvetica, sans-serif;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
+    -webkit-transform: translate3d(0,0,0);
+}
+    body.Rancho { font-family: 'Rancho', sans-serif; }
+
+/* section === slide */
+section {
+    background: black;
+    color: black;
+    display: table;
+    height: 100%;
+    left: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+    section.hidden {
+        pointer-events: none;
+    }
+
+article {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+header {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+}
+
+h1, h2 {
+    opacity: 0.67;
+    text-shadow: rgba(235,225,194,0.33) 0 0.5rem 4rem;
+}
+
+h1 {
+    font-size: 16vw;
+    line-height: 1;
+}
+
+h2 {
+    font-size: 10vw;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+aside {
+    bottom: 1rem;
+    font-size: 3vw;
+    height: 4vw;
+    opacity: 0.5;
+    position: absolute;
+    right: 1.5rem;
+    text-align: right;
+    text-shadow: rgba(0,0,0,0.67) 0 0.5rem 4rem;
+    width: 12vw;
+}
+
+img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+figure {
+    align-items: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+    figure.title {
+        background-size: cover;
+        filter: blur(10px) saturate(33%);
+    }
+    figure video {
+        max-height: 100%;
+        max-width: 100%;
+    }
