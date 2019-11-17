@@ -2,8 +2,6 @@
    Copyright 2019 Andrew Hedges, andrew@hedges.name
 */
 
-import slideData from './slidedata.js'
-
 class Slideshow {
     constructor(options) {
         this.idx = this.getSlideFromHash() - 1
@@ -238,7 +236,7 @@ class Slideshow {
     }
 }
 
-function initSlideshow() {
+function initSlideshow(slideData = []) {
     const ss = new Slideshow({
         slideData,
         selector: '#slideshow > section'
