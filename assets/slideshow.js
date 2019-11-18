@@ -100,6 +100,8 @@ class Slideshow {
         window.location.reload()
     }
 
+    // create initial set of 3 slides
+    // if starting at the beginning of the show, create a blank, dummy slide for the hidden slide
     initSlides() {
         let html = ''
         html += this.makeSlide(this.slideData[this.idx + 1])
