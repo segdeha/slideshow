@@ -5,7 +5,7 @@
 class Slideshow {
     constructor(options) {
         this.idx = this.getSlideFromHash() - 1
-        this.setHash()
+        this.setHash(this.idx + 1)
         this.selector = options.selector || '#slideshow > section'
         this.slideData = options.slideData || []
         this.initSlides()
@@ -91,12 +91,12 @@ class Slideshow {
         }
     }
 
-    setHash() {
-        window.location.hash = this.idx + 1
+    setHash(slide) {
+        window.location.hash = slide
     }
 
     jumpToSlide(slide = 1) {
-        window.location.hash = slide
+        this.setHash(slide)
         window.location.reload()
     }
 
@@ -118,7 +118,7 @@ class Slideshow {
         if (this.idx > this.slideData.length - 1) {
             this.idx = 0
         }
-        this.setHash()
+        this.setHash(this.idx + 1)
         let slides = this.grabSlides()
         let topIdx = slides.length - 1
         let currentIdx = slides.length - 2
@@ -146,7 +146,7 @@ class Slideshow {
         if (this.idx < 0) {
             this.idx = this.slideData.length - 1
         }
-        this.setHash()
+        this.setHash(this.idx + 1)
         let slides = this.grabSlides()
         let topIdx = slides.length - 1
         let currentIdx = slides.length - 2
