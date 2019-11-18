@@ -67,8 +67,9 @@ class Slideshow {
             x_diff = x_last - x_start
             y_diff = y_last - y_start
 
-            // ignore small drags
+            // only respond to horizontal drags
             if (Math.abs(x_diff) > Math.abs(y_diff)) {
+                // only act on drags greater than 30px
                 if (x_diff > 30) {
                     this.prev()
                 }
