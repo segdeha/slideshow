@@ -55,9 +55,6 @@ class Slideshow {
         })
 
         document.addEventListener('touchmove', evt => {
-            // prevent browser from scrolling
-            // evt.preventDefault()
-
             // capture current drag position
             x_last = evt.touches[0].pageX
             y_last = evt.touches[0].pageY
