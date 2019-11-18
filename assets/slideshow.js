@@ -99,7 +99,7 @@ class Slideshow {
     }
 
     jumpToSlide(slide = 1) {
-        window.location.replace(`/#${slide}`)
+        window.location.hash = slide
         window.location.reload()
     }
 
