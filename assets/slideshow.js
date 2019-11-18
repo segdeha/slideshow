@@ -16,13 +16,12 @@ class Slideshow {
                 this.addTouchEvents()
             }
             else {
-                this.addArrowEvents()
+                this.addKeyEvents()
             }
         }
     }
 
-    addArrowEvents() {
-        // attach event handlers
+    addKeyEvents() {
         document.addEventListener('keyup', evt => {
             // prevent arrow keys from moving the document slightly in some cases
             evt.preventDefault()
@@ -33,6 +32,15 @@ class Slideshow {
             // right
             else if (39 === evt.keyCode) {
                 this.next()
+            }
+            // s (for "slide")
+            else if (83 === evt.keyCode) {
+                let slide = prompt('Enter the slide number')
+                if (/\d+/.test(slide)) {
+                    if (slide > -1 && slide < this.slideData.length) {
+                        this.jumpToSlide(slide)
+                    }
+                }
             }
         })
     }
@@ -88,6 +96,11 @@ class Slideshow {
 
     setHash() {
         window.location.hash = this.idx + 1
+    }
+
+    jumpToSlide(slide = 1) {
+        window.location.replace(`/#${slide}`)
+        window.location.reload()
     }
 
     initSlides() {
